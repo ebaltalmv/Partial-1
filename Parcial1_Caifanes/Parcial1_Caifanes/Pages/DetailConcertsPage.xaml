@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Parcial1_Caifanes.Pages.DetailConcertsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             x:Class="Parcial1_Caifanes.Pages.DetailConcertsPage"
+             Title="DetailConcertsPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#8B0000" Offset="0.1"/>
+            <GradientStop Color="#4B0082" Offset="0.6"/>
+            <GradientStop Color="#0A0A0A" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Margin="20" Spacing="15">
+
+
+        <Image x:Name="imageConcert"
+       WidthRequest="180"
+       HeightRequest="280"
+       Aspect="AspectFill"
+       HorizontalOptions="Center" />
+
+        <Label x:Name="dateLabel"
+       FontSize="26"
+       FontAttributes="Bold"
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center" />
+
+        <Label x:Name="nameLabel"
+       FontSize="22"
+       FontAttributes="Bold"
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center" />
+
+        <HorizontalStackLayout Margin="20" Spacing="15" HorizontalOptions="Center">
+            <Label x:Name="locationLabel"
+       FontSize="18"
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center" />
+            <Label x:Name="statusLabel"
+       FontSize="18"
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center"
+                   TextColor="Green"/>
+        </HorizontalStackLayout>
+
+        <Button Text="Comprar Boletos"
+        HorizontalOptions="Center"
+        Clicked="OnBuyTicketClicked"/>
+
+
     </VerticalStackLayout>
 </ContentPage>

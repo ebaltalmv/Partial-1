@@ -12,7 +12,44 @@
     </ContentPage.Background>
 
     <ScrollView>
-        <Grid>
+        <Grid RowSpacing="15" ColumnSpacing="15" Padding="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Text="2026 CAIFANES"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Margin="10"/>
+
+            <ListView Grid.Row="1"
+                      x:Name="concertList"
+                      ItemSelected="OnConcertSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Image Source="{Binding ImageUrl}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
+                                <StackLayout Orientation="Vertical" Margin="10,0">
+                                    <Label Text="{Binding Date}" FontSize="Medium" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Name}" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Grid.Row="2"
+                   Text="MÁS EVENTOS PROXIMAMENTE..."
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
             
         </Grid>
     </ScrollView>
