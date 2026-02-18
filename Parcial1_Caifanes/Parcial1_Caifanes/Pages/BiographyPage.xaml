@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Parcial1_Caifanes.Pages.BiographyPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="Parcial1_Caifanes.Pages.BiographyPage"
+             Title="BiographyPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Image Source="caifanes_cover.jpg" 
+                   HeightRequest="250" 
+                   Aspect="AspectFill" />
+
+            <Label Text="Los Caifanes" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+            <Label Text="Caifanes es una banda mexicana de rock formada en 1987 en la Ciudad de México. Es considerada una de las agrupaciones más influyentes del rock en español y pionera en consolidar el movimiento del rock alternativo en México durante las décadas de los 80 y 90.
+
+Fundada por Saúl Hernández, junto a Alfonso André, Sabo Romo y Diego Herrera, la banda destacó por su estilo oscuro con influencias del post-punk, new wave y música tradicional mexicana. Sus letras, cargadas de poesía, simbolismo y crítica social, conectaron profundamente con una generación que buscaba una identidad propia dentro del rock latinoamericano.
+
+Tras su separación en 1995 debido a conflictos internos, la banda regresó oficialmente a los escenarios en 2011, marcando una nueva etapa en su historia y reafirmando su legado musical." 
+               FontSize="16"
+                   HorizontalTextAlignment="Justify"
+                   />
+
+            <Label Text="Logros Destacados" 
+                   FontSize="22" 
+                   FontAttributes="Bold" 
+                   Margin="0,10,0,0"/>
+
+            <Label Text="• Consolidaron el rock mexicano en la escena internacional durante los años 90.
+• Álbumes icónicos como 'El Diablito', 'El Silencio' y 'El Nervio del Volcán' son considerados clásicos del rock en español.
+• Canciones como 'Afuera', 'No Dejes Que...' y 'La Célula Que Explota' se convirtieron en himnos generacionales.
+• Han realizado giras internacionales por América Latina y Estados Unidos.
+• Su regreso en 2011 fue uno de los acontecimientos más importantes del rock latino.
+
+Caifanes continúa siendo una referencia fundamental para nuevas generaciones de músicos y seguidores del rock en español." 
+               FontSize="16"
+                   HorizontalTextAlignment="Justify"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
