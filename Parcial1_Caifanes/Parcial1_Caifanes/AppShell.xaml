@@ -4,11 +4,32 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Parcial1_Caifanes"
+    xmlns:pages="clr-namespace:Parcial1_Caifanes.Pages"
     Title="Parcial1_Caifanes">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+
+        <Tab Title="Inicio" Icon="dotnet_bot.png">
+            <ShellContent
+                Title="Inicio"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Biografía" Icon="dotnet_bot.png">
+            <ShellContent
+                Title="Biografía"
+                ContentTemplate="{DataTemplate pages:BiographyPage}"
+                Route="BiographyPage" />
+        </Tab>
+
+        <Tab Title="Discos" Icon="dotnet_bot.png">
+            <ShellContent
+                Title="Discografía"
+                ContentTemplate="{DataTemplate pages:DiscographyPage}"
+                Route="DiscographyPage" />
+        </Tab>
+
+    </TabBar>
 
 </Shell>
