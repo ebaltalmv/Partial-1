@@ -4,6 +4,15 @@
              x:Class="Parcial1_Caifanes.Pages.DatailAlbumPage"
              x:Name="DetailPage"
              Title="DatailAlbumPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0A0A0A" Offset="0.1"/>
+            <GradientStop Color="#4B0082" Offset="0.6"/>
+            <GradientStop Color="#8B0000" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
 

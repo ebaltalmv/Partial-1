@@ -45,7 +45,7 @@
             </ListView>
 
             <Label Grid.Row="2"
-                   Text="MÁS EVENTOS PROXIMAMENTE..."
+                   Text="Nos vemos en 2027"
                    FontSize="18"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"

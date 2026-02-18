@@ -1,14 +1,38 @@
 using Parcial1_Caifanes.Models;
+
 namespace Parcial1_Caifanes.Pages;
 
+/// <summary>
+/// P√°gina encargada de mostrar la discograf√≠a completa de la banda.
+/// Gestiona la creaci√≥n de la lista de √°lbumes y la navegaci√≥n hacia los detalles de cada uno.
+/// </summary>
+/// <author>Iker Javier Hern√°ndez Mart√≠nez</author>
+/// <date>17/02/2026</date>
+/// <version>1.0</version>
+/// <modification>17/02/2026</modification>
 public partial class DiscographyPage : ContentPage
 {
-	public DiscographyPage()
-	{
-		InitializeComponent();
-		CargarAlbumes();
-	}
+    /// <summary>
+    /// Constructor de la p√°gina. Inicializa los componentes de la interfaz y carga la informaci√≥n de los √°lbumes.
+    /// </summary>
+    /// <author>Iker Javier Hern√°ndez Mart√≠nez</author>
+    /// <date>17/02/2026</date>
+    /// <version>1.0</version>
+    /// <modification>17/02/2026</modification>
+    public DiscographyPage()
+    {
+        InitializeComponent();
+        CargarAlbumes();
+    }
 
+    /// <summary>
+    /// M√©todo auxiliar que instancia la lista de √°lbumes con su informaci√≥n detallada (nombre, a√±o, imagen, descripci√≥n y canciones)
+    /// y la asigna como fuente de datos para la colecci√≥n visual.
+    /// </summary>
+    /// <author>Iker Javier Hern√°ndez Mart√≠nez</author>
+    /// <date>17/02/2026</date>
+    /// <version>1.0</version>
+    /// <modification>17/02/2026</modification>
     private void CargarAlbumes()
     {
         var albumes = new List<Album>
@@ -16,45 +40,50 @@ public partial class DiscographyPage : ContentPage
             new Album { Name = "Caifanes",
                 Year = "1988",
                 ImageUrl = "album_homonimo.jpg",
-                Description = "El ·lbum debut de Caifanes definiÛ el sonido oscuro y alternativo que marcarÌa al rock mexicano de finales de los aÒos ochenta. Con influencias del post-punk y una estÈtica cargada de misticismo urbano, la banda presentÛ letras intensas y atmÛsferas profundas que conectaron con una nueva generaciÛn. Canciones como ìM·tenme porque me mueroî y ìLa Negra Tomasaî impulsaron su popularidad, consolid·ndolos como una de las propuestas m·s innovadoras del momento.",
-                Songs = new List<string>  {"M·tenme porque me muero", "Te estoy mirando", "La negra Tomasa", "Viento", "Nunca me voy a transformar en ti", "PerdÌ mi ojo de venado", "Amanece", "Estamos acostumbrados", "CuÈntame tu vida", "Ser· por eso" }},
+                Description = "El √°lbum debut de Caifanes defini√≥ el sonido oscuro y alternativo que marcar√≠a al rock mexicano de finales de los a√±os ochenta. Con influencias del post-punk y una est√©tica cargada de misticismo urbano, la banda present√≥ letras intensas y atm√≥sferas profundas que conectaron con una nueva generaci√≥n. Canciones como ‚ÄúM√°tenme porque me muero‚Äù y ‚ÄúLa Negra Tomasa‚Äù impulsaron su popularidad, consolid√°ndolos como una de las propuestas m√°s innovadoras del momento.",
+                Songs = new List<string>  {"M√°tenme porque me muero", "Te estoy mirando", "La negra Tomasa", "Viento", "Nunca me voy a transformar en ti", "Perd√≠ mi ojo de venado", "Amanece", "Estamos acostumbrados", "Cu√©ntame tu vida", "Ser√° por eso" }},
 
             new Album { Name = "El Diablito",
                 Year = "1990",
                 ImageUrl = "album_diablito.jpg",
-                Description = "Con El Diablito, la banda mostrÛ una evoluciÛn clara en su propuesta musical, apostando por un sonido m·s potente y letras de mayor profundidad emocional y social. El disco mantiene la esencia oscura del debut, pero con una producciÛn m·s sÛlida y composiciones m·s arriesgadas. Temas como ìAntes de que nos olvidenî y ìLa cÈlula que explotaî se convirtieron en himnos del rock en espaÒol, reflejando la identidad y la fuerza creativa del grupo.",
-                Songs = new List<string> { "Detr·s de ti", "Antes de que nos olviden", "La vida no es eterna", "De noche todos los gatos son pardos", "Sombras en tiempos perdidos", "El negro cÛsmico", "La cÈlula que explota", "Los dioses ocultos", "El elefante", "Am·rrate a una escoba y vuela lejos" }},
+                Description = "Con El Diablito, la banda mostr√≥ una evoluci√≥n clara en su propuesta musical, apostando por un sonido m√°s potente y letras de mayor profundidad emocional y social. El disco mantiene la esencia oscura del debut, pero con una producci√≥n m√°s s√≥lida y composiciones m√°s arriesgadas. Temas como ‚ÄúAntes de que nos olviden‚Äù y ‚ÄúLa c√©lula que explota‚Äù se convirtieron en himnos del rock en espa√±ol, reflejando la identidad y la fuerza creativa del grupo.",
+                Songs = new List<string> { "Detr√°s de ti", "Antes de que nos olviden", "La vida no es eterna", "De noche todos los gatos son pardos", "Sombras en tiempos perdidos", "El negro c√≥smico", "La c√©lula que explota", "Los dioses ocultos", "El elefante", "Am√°rrate a una escoba y vuela lejos" }},
 
             new Album { Name = "El Silencio",
                 Year = "1992",
                 ImageUrl = "album_silencio.jpg",
-                Description = "Considerado por muchos como su obra m·s lograda, El silencio representa una fusiÛn m·s marcada entre el rock alternativo y elementos de la m˙sica mexicana. Con una producciÛn m·s refinada y un enfoque sonoro m·s org·nico, el ·lbum destaca por su profundidad lÌrica y su intensidad emocional. Canciones como ìNo dejes queÖî y ìNubesî muestran una madurez artÌstica que consolidÛ a la banda como referente fundamental del rock latinoamericano.",
-                Songs = new List<string>{"MetamorfÈame", "Nubes", "Piedra", "Tortuga", "Nos vamos juntos", "No dejes que...", "Hasta morir", "Debajo de tu piel", "Est·s dormida", "MiÈrcoles de ceniza", "El comunicador", "Vamos a hacer un silencio"}},
+                Description = "Considerado por muchos como su obra m√°s lograda, El silencio representa una fusi√≥n m√°s marcada entre el rock alternativo y elementos de la m√∫sica mexicana. Con una producci√≥n m√°s refinada y un enfoque sonoro m√°s org√°nico, el √°lbum destaca por su profundidad l√≠rica y su intensidad emocional. Canciones como ‚ÄúNo dejes que‚Ä¶‚Äù y ‚ÄúNubes‚Äù muestran una madurez art√≠stica que consolid√≥ a la banda como referente fundamental del rock latinoamericano.",
+                Songs = new List<string>{"Metamorf√©ame", "Nubes", "Piedra", "Tortuga", "Nos vamos juntos", "No dejes que...", "Hasta morir", "Debajo de tu piel", "Est√°s dormida", "Mi√©rcoles de ceniza", "El comunicador", "Vamos a hacer un silencio"}},
 
-            new Album { Name = "El Nervio del Volc·n",
+            new Album { Name = "El Nervio del Volc√°n",
                 Year = "1994",
                 ImageUrl = "album_nervio.jpg",
-                Description = "El nervio del volc·n es un ·lbum intenso y emocional que muestra a la banda en una etapa m·s introspectiva y poderosa. Con una producciÛn m·s pulida y un tono m·s oscuro, las canciones exploran el dolor, la ruptura y la transformaciÛn personal. ìAfueraî se convirtiÛ en uno de sus mayores Èxitos, mientras que otras piezas del disco reflejan la energÌa y la profundidad que caracterizaron esta etapa final antes de su separaciÛn en los aÒos noventa.",
-                Songs = new List<string> {"Afuera", "Miedo", "AquÌ no es asÌ", "Ayer me dijo un ave", "Hasta que dejes de respirar", "AviÈntame", "El animal", "Quisiera ser alcohol", "Pero nunca me caÌ", "El aÒo del dragÛn", "La llorona"}},
+                Description = "El nervio del volc√°n es un √°lbum intenso y emocional que muestra a la banda en una etapa m√°s introspectiva y poderosa. Con una producci√≥n m√°s pulida y un tono m√°s oscuro, las canciones exploran el dolor, la ruptura y la transformaci√≥n personal. ‚ÄúAfuera‚Äù se convirti√≥ en uno de sus mayores √©xitos, mientras que otras piezas del disco reflejan la energ√≠a y la profundidad que caracterizaron esta etapa final antes de su separaci√≥n en los a√±os noventa.",
+                Songs = new List<string> {"Afuera", "Miedo", "Aqu√≠ no es as√≠", "Ayer me dijo un ave", "Hasta que dejes de respirar", "Avi√©ntame", "El animal", "Quisiera ser alcohol", "Pero nunca me ca√≠", "El a√±o del drag√≥n", "La llorona"}},
         };
 
         AlbumsCollection.ItemsSource = albumes;
     }
 
+    /// <summary>
+    /// Manejador de evento que se dispara cuando el usuario selecciona un √°lbum de la lista.
+    /// Navega a la p√°gina de detalles pasando el objeto seleccionado y limpia la selecci√≥n.
+    /// </summary>
+    /// <param name="sender">El control que origina el evento (CollectionView).</param>
+    /// <param name="e">Argumentos del evento que contienen la selecci√≥n actual.</param>
+    /// <author>Iker Javier Hern√°ndez Mart√≠nez</author>
+    /// <date>17/02/2026</date>
+    /// <version>1.0</version>
+    /// <modification>17/02/2026</modification>
     private async void OnAlbumSelected(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.FirstOrDefault() is Album selectedAlbum)
         {
-            // Navegamos a la p·gina de detalle enviando el ·lbum seleccionado
+            // Navegamos a la p√°gina de detalle enviando el √°lbum seleccionado
             await Navigation.PushAsync(new DatailAlbumPage(selectedAlbum));
 
-            // Quitamos la selecciÛn para que no se quede marcado al regresar
+            // Quitamos la selecci√≥n para que no se quede marcado al regresar
             ((CollectionView)sender).SelectedItem = null;
         }
-    }
-
-    private void AlbumsCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-
     }
 }
