@@ -4,61 +4,37 @@ namespace Parcial1_Caifanes.Pages;
 
 /// <summary>
 /// Página que presenta los detalles específicos de un concierto seleccionado.
-/// Recibe el objeto ConcertModel a través de parámetros de consulta (QueryProperty).
+/// Recibe el objeto ConcertModel directamente en el constructor para su visualización.
 /// </summary>
 /// <author>Emmanuel Baltazar López</author>
-/// <date>17/02/2026</date>
-/// <version>1.0</version>
-/// <modification>17/02/2026</modification>
-[QueryProperty(nameof(ConcertModel), "Concerts")]
+/// <date>27/02/2026</date>
+/// <version>1.1</version>
+/// <modification>27/02/2026</modification>
 public partial class DetailConcertsPage : ContentPage
 {
     // Variable privada de respaldo para el modelo
     private ConcertModel _concertModel;
 
-    // Propiedad que almacena los datos del concierto actual y notifica cambios a la vista
-    public ConcertModel ConcertModel
-    {
-        get => _concertModel;
-        set
-        {
-            _concertModel = value;
-            OnPropertyChanged();
-        }
-    }
-
     /// <summary>
-    /// Constructor de la página. Inicializa los componentes de la interfaz y crea una instancia base del modelo.
+    /// Constructor de la página. Inicializa los componentes y recibe el modelo seleccionado.
     /// </summary>
+    /// <param name="selectedConcert">El objeto de modelo con los datos del concierto.</param>
     /// <author>Emmanuel Baltazar López</author>
-    /// <date>17/02/2026</date>
-    /// <version>1.0</version>
-    /// <modification>17/02/2026</modification>
-    public DetailConcertsPage()
+    /// <date>27/02/2026</date>
+    /// <version>1.1</version>
+    /// <modification>27/02/2026</modification>
+    public DetailConcertsPage(ConcertModel selectedConcert)
     {
         InitializeComponent();
-        _concertModel = new ConcertModel();
-    }
+        _concertModel = selectedConcert;
 
-    /// <summary>
-    /// Método sobrescrito del ciclo de vida que se ejecuta al mostrar la página.
-    /// Asigna los valores del modelo (imagen, fecha, nombre, ubicación) a los controles de la UI.
-    /// </summary>
-    /// <author>Emmanuel Baltazar López</author>
-    /// <date>17/02/2026</date>
-    /// <version>1.0</version>
-    /// <modification>17/02/2026</modification>
-    override protected void OnAppearing()
-    {
-        base.OnAppearing();
-        if (ConcertModel != null)
+        // Asignación de datos a los controles visuales
+        if (_concertModel != null)
         {
-            // Vinculación manual de datos a los controles visuales
-            imageConcert.Source = ConcertModel.ImageUrl;
-            dateLabel.Text = ConcertModel.Date;
-            nameLabel.Text = ConcertModel.Name;
-            locationLabel.Text = ConcertModel.Location;
-            statusLabel.Text = ConcertModel.status;
+            dateLabel.Text = _concertModel.Date;
+            nameLabel.Text = _concertModel.Name;
+            locationLabel.Text = _concertModel.Location;
+            statusLabel.Text = _concertModel.status;
         }
     }
 
@@ -68,11 +44,12 @@ public partial class DetailConcertsPage : ContentPage
     /// <param name="sender">Objeto que dispara el evento.</param>
     /// <param name="e">Argumentos del evento.</param>
     /// <author>Emmanuel Baltazar López</author>
-    /// <date>17/02/2026</date>
+    /// <date>27/02/2026</date>
     /// <version>1.0</version>
-    /// <modification>17/02/2026</modification>
+    /// <modification>27/02/2026</modification>
     private async void OnBuyTicketClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(TicketsPage));
+        // Usamos PushAsync para mantener consistencia con la navegación por stack
+        await Navigation.PushAsync(new TicketsPage());
     }
 }

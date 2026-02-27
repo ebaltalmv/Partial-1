@@ -3,7 +3,7 @@ using Android.Runtime;
 
 namespace Parcial1_Caifanes
 {
-    [Application]
+    [Application(LargeHeap = true)]
     public class MainApplication : MauiApplication
     {
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)

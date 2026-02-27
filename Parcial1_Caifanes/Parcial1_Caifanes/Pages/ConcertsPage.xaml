@@ -4,53 +4,53 @@
              x:Class="Parcial1_Caifanes.Pages.ConcertsPage">
 
     <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#0A0A0A" Offset="0.1"/>
-            <GradientStop Color="#4B0082" Offset="0.6"/>
-            <GradientStop Color="#8B0000" Offset="1.0"/>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+            <GradientStop Color="{DynamicResource BackgroundPage1}"
+                          Offset="0.1" />
+            <GradientStop Color="{DynamicResource BackgroundPage2}"
+                          Offset="0.6" />
+            <GradientStop Color="{DynamicResource BackgroundPage3}"
+                          Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <ScrollView>
-        <Grid RowSpacing="15" ColumnSpacing="15" Padding="15">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+    <Grid RowDefinitions="Auto, *, Auto"
+          Padding="15"
+          RowSpacing="15">
 
-            <Label Grid.Row="0"
-                   Text="2026 CAIFANES"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   Margin="10"/>
+        <Label Grid.Row="0"
+               Text="2026 CAIFANES"
+               Style="{DynamicResource TitleLabelStyle}"
+               Margin="10" />
 
-            <ListView Grid.Row="1"
-                      x:Name="concertList"
-                      ItemSelected="OnConcertSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10">
-                                <Image Source="{Binding ImageUrl}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill"/>
-                                <StackLayout Orientation="Vertical" Margin="10,0">
-                                    <Label Text="{Binding Date}" FontSize="Medium" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Name}" FontSize="Small"/>
-                                </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+        <CollectionView Grid.Row="1"
+                        x:Name="concertList"
+                        SelectionMode="Single"
+                        SelectionChanged="OnConcertSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10"
+                          ColumnDefinitions="80, *">
+                        <VerticalStackLayout Grid.Column="1"
+                                             Margin="10,0"
+                                             VerticalOptions="Center">
+                            <Label Text="{Binding Date}"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"
+                                   TextColor="{DynamicResource BackgroundColorSwitch}" />
+                            <Label Text="{Binding Name}"
+                                   FontSize="Small"
+                                   TextColor="{DynamicResource BackgroundColorSwitch}" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-            <Label Grid.Row="2"
-                   Text="Nos vemos en 2027"
-                   FontSize="18"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-            
-        </Grid>
-    </ScrollView>
+        <Label Grid.Row="2"
+               Text="Nos vemos en 2027"
+               Style="{StaticResource TitleDiscPage}"
+               HorizontalOptions="Center" />
+    </Grid>
 </ContentPage>

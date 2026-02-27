@@ -4,19 +4,36 @@
              x:Class="Parcial1_Caifanes.Pages.MainPage">
 
     <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#0A0A0A" Offset="0.1"/>
-            <GradientStop Color="#4B0082" Offset="0.6"/>
-            <GradientStop Color="#8B0000" Offset="1.0"/>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+            <GradientStop Color="{DynamicResource BackgroundPage1}"
+                          Offset="0.1" />
+            <GradientStop Color="{DynamicResource BackgroundPage2}"
+                          Offset="0.6" />
+            <GradientStop Color="{DynamicResource BackgroundPage3}"
+                          Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-    <VerticalStackLayout
-                         Padding="30,0"
-                         Spacing="25">
-        <Image
-               Source="caifaneslogo.png"
-               HeightRequest="500"
-               Aspect="AspectFit"/>
-    </VerticalStackLayout>
+        <Switch Grid.Row="0"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                OffColor="{StaticResource BackgroundColorSwitch}"
+                OnColor="{DynamicResource BackgroundColorSwitch}"
+                Margin="10"
+                Toggled="OnToggledChancged" />
+
+        <VerticalStackLayout Padding="30,0"
+                             Spacing="25"
+                             Grid.Row="1">
+            <Image Source="caifaneslogo.png"
+                   Style="{StaticResource ImageMainStyle}" />
+        </VerticalStackLayout>
+
+    </Grid>
 </ContentPage>

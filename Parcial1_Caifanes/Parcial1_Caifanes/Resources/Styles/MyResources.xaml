@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Parcial1_Caifanes.Resources.Styles.MyResources">
+
+    <!-- Colores -->
+    <Color x:Key="BackgroundPage1">#0A0A0A</Color>
+    <Color x:Key="BackgroundPage2">#4B0082</Color>
+    <Color x:Key="BackgroundPage3">#8B0000</Color>
+    <Color x:Key="StatustTextPrimary">Green</Color>
+    <Color x:Key="BackgroundColorSwitch">White</Color>
+    <Color x:Key="BoxView">LightGray</Color>
+
+    <!-- Tamaños -->
+    <x:Double x:Key="TitleFontSize">28</x:Double>
+    <x:Double x:Key="Title1FontSize">26</x:Double>
+    <x:Double x:Key="Subtitle1FontSize">22</x:Double>
+    <x:Double x:Key="Subtitle2FontSize">20</x:Double>
+    <x:Double x:Key="Subtitle3FontSize">18</x:Double>
+    <x:Double x:Key="Body1FontSize">16</x:Double>
+    <x:Double x:Key="Body2FontSize">14</x:Double>
+
+    <!-- Imágenes -->
+    <x:String x:Key="MenuIcon">icon_caifanes.png</x:String>
+
+    <!-- Estilos -->
+    <Style x:Key="ImageMainStyle"
+           TargetType="Image">
+        <Setter Property="HeightRequest"
+                Value="540" />
+        <Setter Property="Aspect"
+                Value="AspectFit" />
+    </Style>
+
+    <Style x:Key="TitleLabelStyle"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource TitleFontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="HorizontalOptions"
+                Value="Center" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+
+    <Style x:Key="Title1LabelStyle"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Title1FontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="HorizontalOptions"
+                Value="Center" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+
+    <Style x:Key="SubtitleLabelStyle"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Subtitle1FontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="Margin"
+                Value="0,10,0,0" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+
+    <Style x:Key="TitleLabelStyle1"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Subtitle1FontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="HorizontalOptions"
+                Value="Center" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+
+    <Style x:Key="InfoAlbum"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Subtitle2FontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+
+    <Style x:Key="ContentBiography"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Body1FontSize}" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Justify" />
+        <Setter Property="VerticalOptions"
+                Value="Center" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+
+    <Style x:Key="TitleDiscPage"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Subtitle3FontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+
+    <Style x:Key="TitleDetailCPage"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Subtitle3FontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="HorizontalOptions"
+                Value="Center" />
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center" />
+    </Style>
+
+    <Style x:Key="ContentDiscPage"
+           TargetType="Label">
+        <Setter Property="FontSize"
+                Value="{StaticResource Body2FontSize}" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource BackgroundColorSwitch}" />
+    </Style>
+</ResourceDictionary>

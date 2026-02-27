@@ -5,49 +5,41 @@
              Title="DetailConcertsPage">
 
     <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#8B0000" Offset="0.1"/>
-            <GradientStop Color="#4B0082" Offset="0.6"/>
-            <GradientStop Color="#0A0A0A" Offset="1.0"/>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+            <GradientStop Color="{DynamicResource BackgroundPage3}"
+                          Offset="0.1" />
+            <GradientStop Color="{DynamicResource BackgroundPage2}"
+                          Offset="0.6" />
+            <GradientStop Color="{DynamicResource BackgroundPage1}"
+                          Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
-    <VerticalStackLayout Margin="20" Spacing="15">
-
-
-        <Image x:Name="imageConcert"
-       WidthRequest="180"
-       HeightRequest="280"
-       Aspect="AspectFill"
-       HorizontalOptions="Center" />
+    <VerticalStackLayout Margin="20"
+                         Spacing="15">
 
         <Label x:Name="dateLabel"
-       FontSize="26"
-       FontAttributes="Bold"
-       HorizontalOptions="Center"
-       HorizontalTextAlignment="Center" />
+               Style="{StaticResource Title1LabelStyle}" />
 
         <Label x:Name="nameLabel"
-       FontSize="22"
-       FontAttributes="Bold"
-       HorizontalOptions="Center"
-       HorizontalTextAlignment="Center" />
+               Style="{StaticResource TitleLabelStyle1}" />
 
-        <HorizontalStackLayout Margin="20" Spacing="15" HorizontalOptions="Center">
+        <HorizontalStackLayout Margin="20"
+                               Spacing="15"
+                               HorizontalOptions="Center">
             <Label x:Name="locationLabel"
-       FontSize="18"
-       HorizontalOptions="Center"
-       HorizontalTextAlignment="Center" />
+                   Style="{StaticResource TitleDetailCPage}"
+                   TextColor="{DynamicResource BackgroundColorSwitch}" />
             <Label x:Name="statusLabel"
-       FontSize="18"
-       HorizontalOptions="Center"
-       HorizontalTextAlignment="Center"
-                   TextColor="Green"/>
+                   Style="{StaticResource TitleDetailCPage}"
+                   TextColor="{DynamicResource StatustTextPrimary}" />
         </HorizontalStackLayout>
 
         <Button Text="Comprar Boletos"
-        HorizontalOptions="Center"
-        Clicked="OnBuyTicketClicked"/>
+                HorizontalOptions="Center"
+                Clicked="OnBuyTicketClicked"
+                TextColor="White"/>
 
 
     </VerticalStackLayout>

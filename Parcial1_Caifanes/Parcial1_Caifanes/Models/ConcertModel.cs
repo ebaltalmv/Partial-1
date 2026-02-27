@@ -10,9 +10,6 @@
     /// <modification>17/02/2026</modification>
     public class ConcertModel
     {
-        // Ruta o URL de la imagen del concierto, inicializada con una imagen por defecto
-        public string ImageUrl { get; set; } = "concert_logo.png";
-
         // Fecha en la que se llevará a cabo el concierto
         public string Date { get; set; } = string.Empty;
 

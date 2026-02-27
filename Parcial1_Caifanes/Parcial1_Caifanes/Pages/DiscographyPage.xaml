@@ -6,10 +6,14 @@
              Title="DiscographyPage">
 
     <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#0A0A0A" Offset="0.1"/>
-            <GradientStop Color="#4B0082" Offset="0.6"/>
-            <GradientStop Color="#8B0000" Offset="1.0"/>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+            <GradientStop Color="{DynamicResource BackgroundPage1}"
+                          Offset="0.1" />
+            <GradientStop Color="{DynamicResource BackgroundPage2}"
+                          Offset="0.6" />
+            <GradientStop Color="{DynamicResource BackgroundPage3}"
+                          Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
@@ -19,12 +23,18 @@
                         SelectionChanged="OnAlbumSelected">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin="0,0,0,10" Padding="10">
+                    <Border Margin="0,0,0,10"
+                            Padding="10">
                         <HorizontalStackLayout Spacing="15">
-                            <Image Source="{Binding ImageUrl}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
+                            <Image Source="{Binding ImageUrl}"
+                                   WidthRequest="80"
+                                   HeightRequest="80"
+                                   Aspect="AspectFill" />
                             <VerticalStackLayout VerticalOptions="Center">
-                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
-                                <Label Text="{Binding Year}" FontSize="14" TextColor="Gray" />
+                                <Label Text="{Binding Name}"
+                                       Style="{StaticResource TitleDiscPage}" />
+                                <Label Text="{Binding Year}"
+                                       Style="{StaticResource ContentDiscPage}" />
                             </VerticalStackLayout>
                         </HorizontalStackLayout>
                     </Border>
